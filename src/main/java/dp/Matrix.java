@@ -9,7 +9,7 @@ public class Matrix {
     private final Logger logger = LogManager.getLogger(Matrix.class);
 
 
-    // 1. 任何一个状态互相不依赖; 2. dfs的参数跟dp状态一致
+    // 1. 任何一个状态不互相依赖; 2. dfs的参数跟dp状态一致
     // ----------------------------------------------------------------
     // 有墙矩阵从第一行到最后一行的最长距离
     int[][][] dp;
@@ -93,5 +93,8 @@ public class Matrix {
         m = new int[][] {{0,0,0,1,0,0}, {0,1,0,0,0,1}, {1,1,1,1,1,1}};
         System.out.println(matrix.longestPathInDiretion3dfs(m) == 0);
         System.out.println(matrix.longestPathInDiretion3dp(m) == 0);
+        m = new int[][] {{0,0,0,1,0,0}, {0,1,0,0,0,1}, {0,0,0,1,1,1}, {1,1,0,0,0,0}, {0,0,1,0,0,0}};
+        System.out.println(matrix.longestPathInDiretion3dfs(m) == 14);
+        System.out.println(matrix.longestPathInDiretion3dp(m) == 14);
     }
 }
